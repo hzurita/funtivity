@@ -1,0 +1,13 @@
+%h1 Create New Activity
+
+= form_tag activities_path do
+
+  = label :activity, :title, 'Title'
+  = text_field :activity, 'title'
+
+  = label :activity, :act_type, 'Type'
+  = select :activity, :act_type, ['Family','Dating','Friends','Free','Tourism']
+  = label :activity, :description, 'Description'
+  = text_field :activity, 'description'
+
+  = submit_tag 'Save Changes'

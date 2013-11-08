@@ -1,0 +1,18 @@
+-# in app/views/activities/show.html.haml
+
+%h2 Details about #{@activity.title}
+
+%ul#details
+  %li
+    Type:
+    = @activity.act_type
+  %li
+    Created on:
+    = @activity.created_at.strftime("%B %d, %Y")
+%h3 Description:
+
+%p#description= @activity.description
+
+= link_to 'Edit', edit_activity_path(@activity)
+= button_to 'Delete', activity_path(@activity), :method => :delete, :confirm => 'Are you sure?'
+= link_to 'Back to activity list', activities_path
